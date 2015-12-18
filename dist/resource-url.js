@@ -17,4 +17,6 @@ function checkURL(ast, file, preferred, done) {
   done();
 }
 
-module.exports = checkURL;
+module.exports = {
+  'trailing-slash': checkURL
+};
