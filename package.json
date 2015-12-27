@@ -1,11 +1,11 @@
 {
-  "name": "mdast-lint-url-trailing-slash",
-  "version": "0.1.1",
+  "name": "remark-lint-no-url-trailing-slash",
+  "version": "1.0.0",
   "description": "Checks that the host part of a URL has no extra trailing slash",
   "author": "Victor Felder <victorfelder@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vhf/mdast-lint-url-trailing-slash.git"
+    "url": "git+https://github.com/vhf/remark-lint-no-url-trailing-slash.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -23,8 +23,8 @@
     "build": "babel lib -d dist"
   },
   "bugs": {
-    "url": "https://github.com/vhf/mdast-lint-url-trailing-slash/issues"
+    "url": "https://github.com/vhf/remark-lint-no-url-trailing-slash/issues"
   },
-  "homepage": "https://github.com/vhf/mdast-lint-url-trailing-slash#readme",
+  "homepage": "https://github.com/vhf/remark-lint-no-url-trailing-slash#readme",
   "main": "dist/resource-url.js"
 }
