@@ -8,9 +8,9 @@ function checkURL(ast, file, preferred, done) {
     var nodeUrl = node.url;
     if (nodeUrl) {
       var parsed = url.parse(nodeUrl);
-      var target = parsed.protocol + '//' + parsed.host;
+      var target = parsed.href;
 
-      if (nodeUrl === target + '/') {
+      if (target.endsWith('/')) {
         file.warn('Remove trailing slash (' + target + ')', node);
       }
     }
