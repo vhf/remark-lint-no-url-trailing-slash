@@ -16,6 +16,17 @@ This rule checks that the host part of a URL has no extra trailing slash. It onl
 
 ## Using the rule
 
+### Check which `remark` version you're using:
+
+```bash
+remark --version
+```
+
+* If you're using `remark@3.x`, use `remark-lint-no-url-trailing-slash@1.x`
+* If you're using `remark@4.x`, use `remark-lint-no-url-trailing-slash@2.x`
+
+If you don't specify a version when npm-installing this package, it will default to `2.x` which is only suitable for `remark@4.x`.
+
 ### Via `.remarkrc`
 
 ```bash
@@ -50,7 +61,5 @@ npm install -g remark-lint
 npm install -g remark-lint-no-url-trailing-slash # global install!
 remark --no-stdout -u remark-lint="external:[\"remark-lint-no-url-trailing-slash\"]" xxx.md
 ```
-
-Note that the `lint=<lint_options>` option only works with `remark >= 1.1.1`.
 
 This `README.md` is based on [this one](https://github.com/chcokr/mdast-lint-sentence-newline/blob/250b106c9e19b387270099cf16f17a84643f8944/README.md) by [@chcokr](https://github.com/chcokr) (MIT).
