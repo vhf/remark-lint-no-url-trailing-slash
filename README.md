@@ -21,7 +21,7 @@ This rule checks that the host part of a URL has no extra trailing slash. It onl
 ```bash
 npm install -g remark
 npm install -g remark-lint
-npm install remark-lint-no-trailing-slash # local install!
+npm install remark-lint-no-url-trailing-slash # local install!
 ```
 
 Then, set up your `.remarkrc`:
@@ -30,7 +30,7 @@ Then, set up your `.remarkrc`:
 {
   "plugins": {
     "remark-lint": {
-      "external": ["remark-lint-no-trailing-slash"]
+      "external": ["remark-lint-no-url-trailing-slash"]
     }
   }
 }
@@ -47,8 +47,8 @@ remark --no-stdout xxx.md
 ```bash
 npm install -g remark
 npm install -g remark-lint
-npm install -g remark-lint-no-trailing-slash # global install!
-remark --no-stdout -u remark-lint="external:[\"remark-lint-no-trailing-slash\"]" xxx.md
+npm install -g remark-lint-no-url-trailing-slash # global install!
+remark --no-stdout -u remark-lint="external:[\"remark-lint-no-url-trailing-slash\"]" xxx.md
 ```
 
 Note that the `lint=<lint_options>` option only works with `remark >= 1.1.1`.
