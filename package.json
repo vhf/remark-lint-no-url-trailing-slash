@@ -1,6 +1,6 @@
 {
   "name": "remark-lint-no-url-trailing-slash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Checks that the host part of a URL has no extra trailing slash",
   "author": "Victor Felder <victorfelder@gmail.com>",
   "repository": {
