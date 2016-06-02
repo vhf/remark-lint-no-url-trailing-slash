@@ -5,12 +5,14 @@ var url = require('url');
 
 function checkURL(ast, file, preferred, done) {
   visit(ast, 'link', function (node) {
-    var href = node.href;
-    var parsed = url.parse(node.href);
-    var target = parsed.protocol + '//' + parsed.host;
+    var nodeUrl = node.url;
+    if (nodeUrl) {
+      var parsed = url.parse(nodeUrl);
+      var target = parsed.protocol + '//' + parsed.host;
 
-    if (href === target + '/') {
-      file.warn('Remove trailing slash (' + target + ')', node);
+      if (nodeUrl === target + '/') {
+        file.warn('Remove trailing slash (' + target + ')', node);
+      }
     }
   });
 
