@@ -1,10 +1,11 @@
 'use strict';
 
+var rule = require('unified-lint-rule');
 var visit = require('unist-util-visit');
 var url = require('url');
 
-function checkURL(ast, file, preferred, done) {
-  visit(ast, 'link', function (node) {
+function checkURL(tree, file) {
+  visit(tree, 'link', function (node) {
     var nodeUrl = node.url;
     if (nodeUrl) {
       var parsed = url.parse(nodeUrl);
@@ -15,10 +16,6 @@ function checkURL(ast, file, preferred, done) {
       }
     }
   });
-
-  done();
 }
 
-module.exports = {
-  'trailing-slash': checkURL
-};
+module.exports = rule('remark-lint:no-url-trailing-slash', checkURL);

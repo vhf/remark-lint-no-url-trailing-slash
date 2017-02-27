@@ -11,6 +11,7 @@
   "dependencies": {
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
+    "unified-lint-rule": "^1.0.0",
     "unist-util-visit": "^1.0.0"
   },
   "devDependencies": {
