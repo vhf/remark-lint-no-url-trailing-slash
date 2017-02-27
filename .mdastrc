@@ -1,7 +1,0 @@
-{
-  "plugins": {
-    "mdast-lint": {
-      "external": ["mdast-lint-url-trailing-slash"]
-    }
-  }
-}
