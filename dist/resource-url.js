@@ -11,7 +11,7 @@ function checkURL(ast, file, preferred, done) {
       var target = parsed.protocol + '//' + parsed.host;
 
       if (nodeUrl === target + '/') {
-        file.warn('Remove trailing slash (' + target + ')', node);
+        file.message('Remove trailing slash (' + target + ')', node);
       }
     }
   });
