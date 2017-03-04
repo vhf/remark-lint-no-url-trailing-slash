@@ -1,24 +1,21 @@
 'use strict';
 
+var rule = require('unified-lint-rule');
 var visit = require('unist-util-visit');
 var url = require('url');
 
-function checkURL(ast, file, preferred, done) {
-  visit(ast, 'link', function (node) {
+function checkURL(tree, file) {
+  visit(tree, 'link', function (node) {
     var nodeUrl = node.url;
     if (nodeUrl) {
       var parsed = url.parse(nodeUrl);
       var target = parsed.protocol + '//' + parsed.host;
 
       if (nodeUrl === target + '/') {
-        file.warn('Remove trailing slash (' + target + ')', node);
+        file.message('Remove trailing slash (' + target + ')', node);
       }
     }
   });
-
-  done();
 }
 
-module.exports = {
-  'trailing-slash': checkURL
-};
+module.exports = rule('remark-lint:no-url-trailing-slash', checkURL);
