@@ -8,7 +8,7 @@ const processor = remark().use(lint).use(noURLTrailingSlash);
 const nok = '[example.com](http://example.com/)';
 const ok = '[example.com](http://example.com)';
 
-test('remark-lint-no-url-trailing-slash', (t) => {
+test('remark-lint-no-url-trailing-slash', t => {
   t.deepEqual(
     processor.processSync(nok).messages.map(String),
     ['1:1-1:35: Remove trailing slash (http://example.com)'],

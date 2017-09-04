@@ -1,6 +1,6 @@
 {
   "name": "remark-lint-no-url-trailing-slash",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Checks that the host part of a URL has no extra trailing slash",
   "author": "Victor Felder <victorfelder@gmail.com>",
   "repository": {
@@ -13,27 +13,41 @@
     "unist-util-visit": "^1.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.3.17",
-    "babel-eslint": "^7.1.1",
-    "babel-preset-es2015": "^6.3.13",
-    "eslint": "^3.16.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "publish-please": "^2.3.1",
     "remark": "^7.0.0",
     "remark-cli": "^3.0.0",
-    "remark-lint": "^6.0.0",
-    "tape": "^4.6.3"
+    "remark-lint": "^6.0.1",
+    "tape": "^4.8.0",
+    "xo": "^0.18.2"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "xo",
     "build-md": "remark . -qfo",
     "build-lib": "babel lib -d dist",
     "build": "npm run build-md && npm run build-lib",
     "test-api": "node test",
-    "test": "npm run lint && npm run build && npm run test-api"
+    "test": "npm run build && npm run lint && npm run test-api"
+  },
+  "xo": {
+    "space": true,
+    "esnext": false,
+    "rules": {
+      "import/no-unassigned-import": "off",
+      "unicorn/prefer-type-error": "off",
+      "unicorn/escape-case": "off",
+      "eqeqeq": "off",
+      "guard-for-in": "off",
+      "max-depth": "off",
+      "complexity": "off",
+      "no-eq-null": "off"
+    },
+    "ignores": [
+      "remark.js"
+    ]
   },
   "bugs": {
     "url": "https://github.com/vhf/remark-lint-no-url-trailing-slash/issues"

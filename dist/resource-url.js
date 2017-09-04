@@ -1,8 +1,8 @@
 'use strict';
 
+var url = require('url');
 var rule = require('unified-lint-rule');
 var visit = require('unist-util-visit');
-var url = require('url');
 
 function checkURL(tree, file) {
   visit(tree, 'link', function (node) {
